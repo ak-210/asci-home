@@ -10,7 +10,7 @@ $(function(){ //This function is the first one to run on load
     };
 
     // Adding Data
-    addData("../snippets/carousel.html", "carousel");
+    addData("snippets/carousel.html", "carousel");
     addData("snippets/case-study.html", "case-study");
     addData("snippets/team.html", "team-info");
 });
