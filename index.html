@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>
+         Home
+    </title>
+
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel='stylesheet' href='css/styles.css'>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav id="header-nav" class="navbar navbar-expand-md bd-navbar navbar-default">
+            <div class="container-fluid" style="justify-content: space-between;">
+                <div class="navbar-header">
+                    <div id="logo-img" class="navbar-brand"></div>
+                </div>
+
+                <button id="navbarToggle" type="button" class="navbar-toggler collapsed float-end" data-bs-toggle="collapse" data-bs-target="#collapsable-nav" aria-expanded="false">
+                    <!-- <span class="sr-only">Toggle navigation</span> -->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="collapsable-nav" class="collapse navbar-collapse">
+                    <ul id="nav-list" class="nav navbar-nav navbar-right ms-auto">
+                        <li class="nav-item">About us</li>
+                        
+                        <li class="nav-item dropdown"><!-- Solutions Dropdown -->
+                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"> Pre-processing </a></li>
+                                <li><a class="dropdown-item" href="#"> HSI Data Integration </a></li>
+                                <li><a class="dropdown-item" href="#"> Analytic Solutions </a></li>
+                            </ul>
+                        </li><!-- Solutions Dropdown End -->
+
+                        <li class="nav-item dropdown"> <!-- Resources Dropdown -->
+                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"> Blogs </a></li>
+                                <li><a class="dropdown-item" href="#"> Case Studies </a></li>
+                            </ul>
+                        </li> <!-- Resources Dropdown End -->
+
+                        <li class="nav-item">Client Login</li>
+                        
+                        <li class="nav-item"><a href="#contact">Contact Us</a></li>
+
+                   </ul><!-- #nav-list -->
+                </div>
+            </div>
+        </nav>
+    </header>
+<!-- <header class="navbar navbar-expand-lg bd-navbar sticky-top">flex -->
+    <!-- Main Banner -->
+    <div id="banner" class="container-fluid jumbotron">
+        <h1>Headline</h1>
+        <h3>Description</h3>
+        <button type="button" class="cta-btn btn btn-primary">CTA</button>
+    </div>
+
+    <div class="spacer"></div>
+    
+    <!-- Carousel -->
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <!-- Data added using JavaScript from "snippets/carousel.html" -->
+
+    </div>
+    <!-- Carousel End -->
+    
+    <div class="spacer"></div>
+    
+    <!-- Story Banner -->
+    <div id="story" class="container-fluid pull-right">
+        <h2>Our stroy</h2>
+        <h4>Desc</h4>
+        <div>
+            <button type="button" class="cta-btn btn btn-primary float-end">CTA</button>
+        </div>
+    </div>
+    <!-- Story Banner End-->
+
+    <div class="spacer"></div>
+
+    <!-- Services Provided -->
+    <div id="services" class="container-fluid">
+        <div class="row row-cols-2 row-cols-md-3 p-3">
+            <div class="col">
+                <div class="card">
+                    <h3 class="card__title">Data Agregation</h3>
+                    <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    
+                    <button class="card__arrow">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </button>
+                </div>
+            </div> <!-- Card end -->
+            
+            <div class="col">
+                <div class="card">
+                    <h3 class="card__title">Data Analytics</h3>
+                    <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    
+                    <button class="card__arrow">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </button>
+                </div>
+            </div> <!-- Card end -->
+            
+            <div class="col">
+                <div class="card">
+                    <h3 class="card__title">Deep Learning Model</h3>
+                    <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    
+                    <button class="card__arrow">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </button>
+                </div>
+            </div> <!-- Card end -->
+            
+        </div> <!-- Row end -->
+    </div>
+    <!-- Services Provided End -->
+
+    <div class="spacer"></div>
+
+    <!-- Case Study -->
+    <div id="case-study" class="carousel" data-bs-ride="carousel">
+        <!-- Data added using JavaScript from "snippets/case-study.html" -->
+    </div>
+    <!-- Case Study End -->
+
+    <div class="spacer"></div>
+
+    <!-- Team Info -->
+    <div id="team-info" class="container-fluid">
+        <!-- Data added using JavaScript from "snippets/team.html" -->
+        
+    </div>
+    <!-- Team info End -->
+
+    <div class="spacer"></div>
+
+    <!-- Footer & Contact info -->
+    <footer class="container-fluid">
+        <div class="row row-cols-1 row-cols-sm-2">
+            <div id="back-top" class="col-12">
+                <a href="#header-nav"> Back To Top</a>
+            </div>
+            
+            <div id="contact" class="col-12 col-sm-4">
+                <span><i class="bi bi-telephone"></i> Pnone Number</span> <br class="hidden-xs">
+                <span><i class="bi bi-envelope-at"></i> Email</span>
+            </div>
+            
+            <div id="contact-form" class="col-12 col-sm-7">
+                <input type="text" name="Subject" id="mail-sub">
+                <input type="text" name="Desc" id="mail-desc">
+            </div>
+        </div>
+    </footer>
+    <!-- Footer & Contact info End -->
+    
+    <!-- jQuery (Bootstrap JS plugins depend on it) -->
+    <!-- <script src='js/jquery-2.1.4.min.js'></script> -->
+    <!-- <script src='js/bootstrap.min.js'></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src='js/bootstrap.bundle.min.js'></script>
+    <script src='js/ajax-utils.js'></script>
+    <script src='js/script.js'></script>
+</body>
+</html>
