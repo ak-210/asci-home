@@ -18,9 +18,10 @@ $(function(){ //This function is the first one to run on load
 window.onload = function () {
 // Working of the Carousel of the Case Study
 if(window.matchMedia("(min-width:576px)").matches){
-    var carouselWidth = $("#case-study-inner")[0].scrollWidth;
+    // var carouselWidth = $("#case-study-inner")[0].scrollWidth;
     var cardWidth = $("#case-study-inner .carousel-item").width();
-    // var carouselWidth = 5*cardWidth
+    var carouselWidth = 5*cardWidth
+    console.log(cardWidth, carouselWidth)
 
     
     var scrollPosition = 0
