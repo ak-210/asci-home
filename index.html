@@ -91,41 +91,33 @@
 
     <!-- Services Provided -->
     <div id="services" class="container-fluid">
-        <div class="row row-cols-2 row-cols-md-3 p-3">
-            <div class="col">
-                <div class="card">
-                    <h3 class="card__title">Data Agregation</h3>
-                    <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                    
-                    <button class="card__arrow">
-                        <i class="bi bi-arrow-right-circle"></i>
-                    </button>
-                </div>
-            </div> <!-- Card end -->
+        <div class="card">
+            <h3 class="card__title">Data Agregation</h3>
+            <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
             
-            <div class="col">
-                <div class="card">
-                    <h3 class="card__title">Data Analytics</h3>
-                    <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                    
-                    <button class="card__arrow">
-                        <i class="bi bi-arrow-right-circle"></i>
-                    </button>
-                </div>
-            </div> <!-- Card end -->
+            <button class="card__arrow">
+                <i class="bi bi-arrow-right-circle"></i>
+            </button>
+        </div> <!-- Card end -->
+
+        <div class="card">
+            <h3 class="card__title">Data Analytics</h3>
+            <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
             
-            <div class="col">
-                <div class="card">
-                    <h3 class="card__title">Deep Learning Model</h3>
-                    <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                    
-                    <button class="card__arrow">
-                        <i class="bi bi-arrow-right-circle"></i>
-                    </button>
-                </div>
-            </div> <!-- Card end -->
+            <button class="card__arrow">
+                <i class="bi bi-arrow-right-circle"></i>
+            </button>
+        </div> <!-- Card end -->
+
+        <div class="card">
+            <h3 class="card__title">Deep Learning Model</h3>
+            <p class="card__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
             
-        </div> <!-- Row end -->
+            <button class="card__arrow">
+                <i class="bi bi-arrow-right-circle"></i>
+            </button>
+        </div><!-- Card end -->
+
     </div>
     <!-- Services Provided End -->
 
@@ -161,8 +153,12 @@
             </div>
             
             <div id="contact-form" class="col-12 col-sm-7">
-                <input type="text" name="Subject" id="mail-sub">
-                <input type="text" name="Desc" id="mail-desc">
+                <h4>GET IN TOUCH</h4>
+                <input type="email" name="Email ID" id="mail-id" placeholder="Email ID">
+                <input type="text" name="Subject" id="mail-sub" placeholder="Subject">
+                <textarea name="Desc" id="mail-desc" rows="5" placeholder="How may we help you?"></textarea>
+
+                <button type="button" id="mail-btn"> Send Mail <i class="bi bi-arrow-right-circle"></i></button>
             </div>
         </div>
     </footer>

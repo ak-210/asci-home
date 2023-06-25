@@ -1,6 +1,7 @@
 *{
-    --primary-color: royalblue;
+    --primary-color: #4169e1;
     --secondary-color: #3c3852;
+    --margin-banner: 10vw;
 }
 
 a{
@@ -103,7 +104,6 @@ html {
 
 /* Banner ***********************************************************/
 #banner{
-    --margin-banner: 35px;
     padding-top: 25px;
     padding-bottom: 25px;
     margin-bottom: 0px;
@@ -220,11 +220,15 @@ button.cta-btn{
 
 /* Services **************************************************************/
 #services {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
     .card {
         --border-radius: 0.75rem;
-        /* width: 95; */
+        width: 30%;
         font-family: "Arial";
-        height: 30vh;
+        /* height: 30vh; */
         padding: 1rem;
         cursor: pointer;
         border-radius: 0px;
@@ -368,11 +372,22 @@ button.cta-btn{
 /* Case study End */
 
 /* Members Style **********************************************************/
+#team-info{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5vh;
+    flex-wrap: wrap;
+}
+
 .team-member{
     margin-bottom: 15px;
-    margin-top: 10px;
-    margin-left: 10px;
+    /* margin-top: 10px; */
+    /* margin-left: 10px; */
+    width: 30%;
     padding: 0px;
+    border: 1px solid transparent;
+    box-shadow: 5px 5px #f5f5f5;
 }
 
 .member-img{
@@ -416,34 +431,53 @@ button.cta-btn{
 #contact{
     padding-left: 10vw;
     margin-top: 10vh;
-    margin-bottom: 14vh;
-}
-
-#contact span{
-    display: block;
-    margin-bottom: 5vh;
+    /* margin-bottom: 14vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5vh;
 }
 
 /* Contact form */
-#mail-sub{
-    display: block;
-    margin-top: 7vh;
-    margin-left: 8vw;
-    width: 45vw;
-    height: 5vh;
-    font-size: 3vh;
-    padding-left: 5px;
+#contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+
 }
 
-#mail-desc{
-    display: block;
-    margin-top: 7vh;
-    margin-left: 8vw;
-    width: 45vw;
-    height: 25vh;
-    font-size: 3vh;
-    padding-left: 5px;
-    margin-bottom: 10px;
+#contact-form h4 {
+    width: 50vw;
+    font-size: 16px;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+#mail-id, #mail-sub, #mail-desc{
+    border: 0;
+    outline: none;
+    margin: 10px 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #f5f5f5;
+    width: 50vw;
+}
+
+#mail-btn{
+    background: transparent;
+    padding: 5px 10px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+#mail-btn:hover{
+    background: var(--primary-color);
+    color: #fff;
 }
 /* Footer End */
 
@@ -461,6 +495,11 @@ button.cta-btn{
         height: 300px;
     }
 }
+@media (max-width: 992px) {
+    .team-member{
+        width: 45%;
+    }
+}
 
 /********** Medium devices only **********/
 @media (min-width: 768px) {
@@ -469,6 +508,10 @@ button.cta-btn{
 
 /********** Small devices only **********/
 @media (max-width: 767px) {
+    * {
+        --margin-banner: 5vw;
+    }
+
     /* Navigation */
     #logo-img{
         margin-left: 35px;
@@ -528,17 +571,19 @@ button.cta-btn{
         overflow-x: hidden;
     }
 
-    #services .col{
-        width: auto;
+    #services{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .card{
+            width: 90%;
+        }
     }
 
     .team-member{
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-
-    #banner{
-        --margin-banner: 25px;
+        width: 80%;
     }
 
     .hidden-xs{
@@ -546,22 +591,26 @@ button.cta-btn{
     }
 
     #contact{
-        margin-right: 0;
-        margin-bottom: 3vw;
-        /* width: 90%; */
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
     }
-
-    #contact span{
-        display: inline;
-    }
-    #contact span:first-child{
-        padding-right: 25vw;
+    
+    #contact-form h4, #mail-id, #mail-sub, #mail-desc{
+        width: 85vw;
     }
 }
 
 @media(max-width:410px) {
     #logo-img{
         margin-left: 15px;
+    }
+
+    .team-member{
+        width: 90%;
     }
 }
 
