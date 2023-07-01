@@ -11,40 +11,42 @@
 
     // Adding Data
     // var loadContent = function() {
-    console.log("1")
+    // console.log("1")
     addData("snippets/carousel.html", "carousel");
     addData("snippets/case-study.html", "case-study");
     addData("snippets/team.html", "team-info");
 // };
 
 if(window.matchMedia("(min-width:576px)").matches){
-    console.log(2)
+    if($("#case-study").hasClass("slide")){
+        $("#case-study").removeClass("slide");
+    }
     // var carouselWidth = $("#case-study-inner")[0].scrollWidth;
     // var cardWidth = $("#case-study #case-study-inner .carousel-item").width();
 
     var cardWidth = $(window).width() / 3;
     var carouselWidth = 5*cardWidth
-    console.log(cardWidth, carouselWidth);
+    // console.log(cardWidth, carouselWidth);
 
     
     var scrollPosition = 0
     
-    $("#case-study .carousel-control-next").on('click', function(){
+    var cs_next =  function(){
         console.log("yes")
         if((scrollPosition) < (carouselWidth - (cardWidth*3.5))){
             changeValues();
             scrollPosition = scrollPosition + cardWidth;
             $("#case-study-inner").animate({scrollLeft: (scrollPosition)}, 600);
         }
-    });
+    };
 
-    $("#case-study .carousel-control-prev").on('click', function(){
+    var cs_prev =  function(){
         if(scrollPosition > 0){
             changeValues();
             scrollPosition = scrollPosition - cardWidth;
             $("#case-study-inner").animate({scrollLeft: scrollPosition}, 600);
         }
-    });
+    };
 
     var changeValues = function(){
         var n = scrollPosition / cardWidth;
@@ -55,7 +57,16 @@ if(window.matchMedia("(min-width:576px)").matches){
     };
 
 }else{
+    // console.log(3)
     $("#case-study").addClass("slide");
 };
-// };
 
+
+// var cs_next =  function() {
+//     console.log("yes")
+//     if((scrollPosition) < (carouselWidth - (cardWidth*3.5))){
+//         changeValues();
+//         scrollPosition = scrollPosition + cardWidth;
+//         $("#case-study-inner").animate({scrollLeft: (scrollPosition)}, 600);
+//     }
+// };

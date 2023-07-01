@@ -294,8 +294,8 @@ button.cta-btn{
 
 /* Case study ****************************************************/
 #case-study .carousel-item{
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #case-study .card {
@@ -305,6 +305,7 @@ button.cta-btn{
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     border: 1px solid transparent;
     height: 50vh;
+    /* width: 30vw; */
 }
     
 #case-study .content {
