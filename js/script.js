@@ -1,72 +1,17 @@
-// $(window).onload = function() {
-    var addData = function(dataLink, dataID) {
-        dataID = '#' + dataID
-        $ajaxUtils.sendGetRequest(
-            dataLink,
-            function (data) {
-                document.querySelector(dataID).innerHTML = data;
-            },
-        false);
-    };
+// Add elements with scroll
+window.addEventListener("scroll", function(){
+    var reveal = this.document.querySelectorAll(".scroll-hide")
 
-    // Adding Data
-    // var loadContent = function() {
-    // console.log("1")
-    addData("snippets/carousel.html", "carousel");
-    addData("snippets/case-study.html", "case-study");
-    addData("snippets/team.html", "team-info");
-// };
+    for(var i = 0; i < reveal.length; i++){
+        var window_height = window.innerHeight;
+        var reveal_top = reveal[i].getBoundingClientRect().top;
+        var reveal_pt = 100;
 
-if(window.matchMedia("(min-width:576px)").matches){
-    if($("#case-study").hasClass("slide")){
-        $("#case-study").removeClass("slide");
+        if(reveal_top < window_height - reveal_pt){
+            reveal[i].classList.add("scroll-reveal");
+        }
+        else{
+            reveal[i].classList.remove("scroll-reveal");
+        }
     }
-    // var carouselWidth = $("#case-study-inner")[0].scrollWidth;
-    // var cardWidth = $("#case-study #case-study-inner .carousel-item").width();
-
-    var cardWidth = $(window).width() / 3;
-    var carouselWidth = 5*cardWidth
-    // console.log(cardWidth, carouselWidth);
-
-    
-    var scrollPosition = 0
-    
-    var cs_next =  function(){
-        console.log("yes")
-        if((scrollPosition) < (carouselWidth - (cardWidth*3.5))){
-            changeValues();
-            scrollPosition = scrollPosition + cardWidth;
-            $("#case-study-inner").animate({scrollLeft: (scrollPosition)}, 600);
-        }
-    };
-
-    var cs_prev =  function(){
-        if(scrollPosition > 0){
-            changeValues();
-            scrollPosition = scrollPosition - cardWidth;
-            $("#case-study-inner").animate({scrollLeft: scrollPosition}, 600);
-        }
-    };
-
-    var changeValues = function(){
-        var n = scrollPosition / cardWidth;
-        cardWidth = $(window).width() / 3;
-        carouselWidth = 5*cardWidth;
-
-        scrollPosition = n * cardWidth
-    };
-
-}else{
-    // console.log(3)
-    $("#case-study").addClass("slide");
-};
-
-
-// var cs_next =  function() {
-//     console.log("yes")
-//     if((scrollPosition) < (carouselWidth - (cardWidth*3.5))){
-//         changeValues();
-//         scrollPosition = scrollPosition + cardWidth;
-//         $("#case-study-inner").animate({scrollLeft: (scrollPosition)}, 600);
-//     }
-// };
+});

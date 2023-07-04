@@ -5,35 +5,36 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>
-         Home
+        ASCI
     </title>
-
     <!-- Bootstrap -->
     <link rel='stylesheet' href='css/bootstrap.min.css'>
-    <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
     <link rel='stylesheet' href='css/styles.css'>
 </head>
 <body>
-    <!-- Navigation -->
     <header>
-        <nav id="header-nav" class="navbar navbar-expand-md bd-navbar navbar-default">
-            <div class="container-fluid" style="justify-content: space-between;">
-                <div class="navbar-header">
-                    <div id="logo-img" class="navbar-brand"></div>
-                </div>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <div class="logo"></div>
+                <div class="brand-name">ASCI</div>
 
-                <button id="navbarToggle" type="button" class="navbar-toggler collapsed float-end" data-bs-toggle="collapse" data-bs-target="#collapsable-nav" aria-expanded="false">
-                    <!-- <span class="sr-only">Toggle navigation</span> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContent" aria-controls="collapseContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div id="collapsable-nav" class="collapse navbar-collapse">
+                <div class="collapse navbar-collapse" id="collapseContent">
                     <ul id="nav-list" class="nav navbar-nav navbar-right ms-auto">
-                        <li class="nav-item">About us</li>
-                        
+                        <li class="nav-item">About Us</li>
                         <li class="nav-item dropdown"><!-- Solutions Dropdown -->
-                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions</button>
+                            <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Solutions</span>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"> Pre-processing </a></li>
                                 <li><a class="dropdown-item" href="#"> HSI Data Integration </a></li>
@@ -42,118 +43,190 @@
                         </li><!-- Solutions Dropdown End -->
 
                         <li class="nav-item dropdown"> <!-- Resources Dropdown -->
-                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</button>
+                            <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</span>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"> Blogs </a></li>
                                 <li><a class="dropdown-item" href="#"> Case Studies </a></li>
                             </ul>
                         </li> <!-- Resources Dropdown End -->
-
                         <li class="nav-item">Client Login</li>
-                        
-                        <li class="nav-item"><a href="#contact">Contact Us</a></li>
-
-                   </ul><!-- #nav-list -->
+                        <li class="nav-item">Contact Us</li>
+                    </ul>
                 </div>
             </div>
         </nav>
-    </header>
-<!-- <header class="navbar navbar-expand-lg bd-navbar sticky-top">flex -->
-    <!-- Main Banner -->
-    <div id="banner" class="container-fluid jumbotron">
-        <h1>Headline</h1>
-        <h3>Description</h3>
-        <button type="button" class="cta-btn btn btn-primary">CTA</button>
-    </div>
+    </header> <!-- Navigation End -->
+
+    <!-- Banner Start -->
+    <div id="banner" class="container-fluid">
+        <h1 id="banner-title">Unlocking EO Data Potential</h1>
+        <p id="banner-desc">Leverage EO data to manage your assets and gain a competitive advantage</p>
+        <button class="cta-btn">Contact Us</button>
+    </div> <!-- Banner End -->
 
     <div class="spacer"></div>
-    
-    <!-- Carousel -->
-    <div id="carousel" class="carousel slide" data-ride="carousel">
-        <!-- Data added using JavaScript from "snippets/carousel.html" -->
 
-    </div>
-    <!-- Carousel End -->
-    
+    <!-- Story Start -->
+    <div id="story" class="container scroll-hide">
+        <h2 id="story-title">What We Do?</h2>
+        <p id="story-txt">There are Petabytes of Earth-Obseravation data out there being recorded world over through multiple sources. There are quantum leaps being made in computational power and deep tech algorithms. We are a group of data engineers and data scientists who combine them both to radically augment your value chain and give you that competitive edge.</p>
+    </div> <!-- Story End -->
+
     <div class="spacer"></div>
-    
-    <!-- Story Banner -->
-    <div id="story" class="container-fluid pull-right">
-        <h2>Our stroy</h2>
-        <h4>Desc</h4>
-        <div>
-            <button type="button" class="cta-btn btn btn-primary float-end">CTA</button>
+
+    <!-- Industry Start -->
+    <div id="industry-container" class="container-fluid scroll-hide">
+        <h3>Industries We Operate In</h3>
+        <p>Find out more about our Work</p>
+        <div id="industry">
+            <article class="card">
+                <div class="temporary_text">
+                    <img src='img/agri.jpg'>
+                </div>
+                
+                <div class="card_content">
+                    <span class="card_title">Agriculture</span>
+                    
+                    <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+                    
+                </div> <!-- Card Content -->
+            </article> <!-- Card End -->
+            
+            <article class="card">
+                <div class="temporary_text">
+                    <img src='img/agro.png'>
+                </div>
+
+                <div class="card_content">
+                    <span class="card_title">Agroforestry</span>
+
+                    <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+                    
+                </div> <!-- Card Content -->
+            </article> <!-- Card End -->
+            
+            <article class="card">
+                <div class="temporary_text">
+                    <img src='img/mine.png'>
+                </div>
+
+                <div class="card_content">
+                    <span class="card_title">Mining</span>
+
+                    <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+                    
+                </div> <!-- Card Content -->
+            </article> <!-- Card End -->
+            
+            <article class="card">
+                <div class="temporary_text">
+                    <img src='img/urban.png'>
+                </div>
+                
+                <div class="card_content">
+                    <span class="card_title">Urban Planning</span>
+
+                    <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+                    
+                </div> <!-- Card Content -->
+            </article> <!-- Card End -->
         </div>
-    </div>
-    <!-- Story Banner End-->
+    </div> <!-- Industry end -->
 
     <div class="spacer"></div>
 
-    <!-- Services Provided -->
-    <div id="services" class="container-fluid">
+    <!-- Services -->
+    <div id="services" class="scroll-hide">
+        <h3>Services Provided</h3>
         <div class="card">
-            <h3 class="card__title">Data Agregation</h3>
-            <p class="card__content">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis </p>
-            
-            <button class="card__arrow">
-                <i class="bi bi-arrow-right-circle"></i>
-            </button>
-        </div> <!-- Card end -->
-
+            <div class="card-content">
+            <p class="card-title">Pre-processing</p>
+            <p class="card-para">Create analysis ready data at the click of a button</p>
+            </div>
+        </div> <!-- Card End -->
+        
         <div class="card">
-            <h3 class="card__title">Data Analytics</h3>
-            <p class="card__content">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis </p>
-
-            <button class="card__arrow">
-                <i class="bi bi-arrow-right-circle"></i>
-            </button>
-        </div> <!-- Card end -->
-
+            <div class="card-content">
+            <p class="card-title">Visualize</p>
+            <p class="card-para">Visually explore your asset using geospatial intelligence</p>
+            </div>
+        </div> <!-- Card End -->
+        
         <div class="card">
-            <h3 class="card__title">Deep Learning Model</h3>
-            <p class="card__content">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis </p>
-            
-            <button class="card__arrow">
-                <i class="bi bi-arrow-right-circle"></i>
-            </button>
-        </div><!-- Card end -->
+            <div class="card-content">
+            <p class="card-title">Analyze</p>
+            <p class="card-para">Define and compare important key metrics that measure the health of your business</p>
+            </div>
+        </div> <!-- Card End -->
+        
+        <div class="card">
+            <div class="card-content">
+            <p class="card-title">Insights</p>
+            <p class="card-para">Uncover hidden truths about your business </p>
+            </div>
+        </div> <!-- Card End -->
+        
+        <div class="card">
+            <div class="card-content">
+                <p class="card-title">Applications</p>
+                <p class="card-para">Play around and design tailored made applications that suit your complex needs</p>
+            </div>
+        </div> <!-- Card End -->
 
     </div>
-    <!-- Services Provided End -->
+    <!-- Services End -->
 
     <div class="spacer"></div>
 
     <!-- Case Study -->
-    <div id="case-study" class="carousel" data-bs-ride="carousel">
-        <!-- Data added using JavaScript from "snippets/case-study.html" -->
+    <div id="case-study" class="container-fluid scroll-hide">
+        <div class="card">
+            <div class="content">
+                <p class="heading">Card Hover Effect</p>
+                <p class="para">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi laboriosam at voluptas minus culpa deserunt delectus sapiente inventore pariatur
+                </p>
+                <button class="btn">Read more</button>
+            </div>
+        </div> <!-- Card end -->
+        
+        <div class="card">
+            <div class="content">
+                <p class="heading">Card Hover Effect</p>
+                <p class="para">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi laboriosam at voluptas minus culpa deserunt delectus sapiente inventore pariatur
+                </p>
+                <button class="btn">Read more</button>
+            </div>
+        </div> <!-- Card end -->
+        
+        <div class="card">
+            <div class="content">
+                <p class="heading">Card Hover Effect</p>
+                <p class="para">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi laboriosam at voluptas minus culpa deserunt delectus sapiente inventore pariatur
+                </p>
+                <button class="btn">Read more</button>
+            </div>
+        </div> <!-- Card end -->
     </div>
     <!-- Case Study End -->
 
     <div class="spacer"></div>
-
-    <!-- Team Info -->
-    <div id="team-info" class="container-fluid">
-        <!-- Data added using JavaScript from "snippets/team.html" -->
-        
-    </div>
-    <!-- Team info End -->
-
     <div class="spacer"></div>
 
-    <!-- Footer & Contact info -->
-    <footer class="container-fluid">
-        <div class="row row-cols-1 row-cols-sm-2">
-            <div id="back-top" class="col-12">
-                <a href="#header-nav"> Back To Top</a>
+    <!-- Contact Page -->
+    <footer class=" scroll-hide">
+        <h3>Let's co-inovate</h3>
+        <div id="contact">
+            <div class="socials">
+                <a href="#"><i class="bi bi-linkedin"></i><span> LinkedIn</span></a>
+                <a href="#"><i class="bi bi-whatsapp"></i><span> WhatsApp</span></a>
+                <a href="#"><i class="bi bi-envelope-at"></i><span> Email</span></a>
             </div>
-            
-            <div id="contact" class="col-12 col-sm-4">
-                <span><i class="bi bi-telephone"></i> Pnone Number</span> <br class="hidden-xs">
-                <span><i class="bi bi-envelope-at"></i> Email</span>
-            </div>
-            
-            <div id="contact-form" class="col-12 col-sm-7">
-                <h4>GET IN TOUCH</h4>
+
+            <div id="contact-form">
+                <!-- <h4>GET IN TOUCH</h4> -->
                 <input type="email" name="Email ID" id="mail-id" placeholder="Email ID">
                 <input type="text" name="Subject" id="mail-sub" placeholder="Subject">
                 <textarea name="Desc" id="mail-desc" rows="5" placeholder="How may we help you?"></textarea>
@@ -162,13 +235,12 @@
             </div>
         </div>
     </footer>
-    <!-- Footer & Contact info End -->
+    <!-- Contact Page End -->
     
     <!-- jQuery (Bootstrap JS plugins depend on it) -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src='js/bootstrap.bundle.min.js'></script>
     <script src='js/ajax-utils.js'></script>
     <script src='js/script.js'></script>
-    
 </body>
 </html>
