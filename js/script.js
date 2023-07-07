@@ -1,17 +1,29 @@
-// Add elements with scroll
-window.addEventListener("scroll", function(){
-    var reveal = this.document.querySelectorAll(".scroll-hide")
+// Auto populate #case-study ////////////////////////////////////////////////////
+async function getJSON(path) {
+    const response = await fetch(`./${path}`);
+    const data = await response.json();
+    return data
+};
 
-    for(var i = 0; i < reveal.length; i++){
-        var window_height = window.innerHeight;
-        var reveal_top = reveal[i].getBoundingClientRect().top;
-        var reveal_pt = 100;
+async function getHTML(path) {
+    const response = await fetch(`./${path}`);
+    const data = await response.text();
+    return data
+};
 
-        if(reveal_top < window_height - reveal_pt){
-            reveal[i].classList.add("scroll-reveal");
-        }
-        else{
-            reveal[i].classList.remove("scroll-reveal");
-        }
-    }
-});
+function addProperty(name, value, text){
+    var txt = text.replace(name, value)
+    return(txt);
+};
+
+var projects = await getJSON('../json/case-study.json');
+var html = await getHTML('../snippets/case-study.html');
+var final_html = '';
+
+
+for(var i = 0; i < 3; i++){
+    var txt =  addProperty("{{title}}", projects[i].title, html);
+    final_html +=  addProperty("{{desc}}", projects[i].description, txt) + '\n';
+}
+
+document.getElementById("case-study").innerHTML = final_html;
