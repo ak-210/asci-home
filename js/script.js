@@ -1,12 +1,12 @@
 // Auto populate #case-study ////////////////////////////////////////////////////
 async function getJSON(path) {
-    const response = await fetch(`./${path}`);
+    const response = await fetch(path);
     const data = await response.json();
     return data
 };
 
 async function getHTML(path) {
-    const response = await fetch(`./${path}`);
+    const response = await fetch(path);
     const data = await response.text();
     return data
 };
