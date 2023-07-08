@@ -699,6 +699,9 @@ footer .socials i{
     .hidden-xs{
         display: none;
     }
+    :root{
+        --skew: -4deg;
+    }
 
     /* banner */
     #banner {
