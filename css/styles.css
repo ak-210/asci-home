@@ -1,8 +1,8 @@
 :root {
     --nav-margin: 7vw;
     --color-1: #6527BE;
-    --color-2: #9681EB;
-    --color-3: #45CFDD;
+    --color-2: #febf12;
+    --color-3: #fc006e;
     --color-4: #A7EDE7;
     --skew: -3deg;
     --title-1:'DM Serif Display', serif;
@@ -51,16 +51,13 @@ html {
 }
 
 /* Navigation Styles ***********************************************/
-header{
-    background-color: var(--color-1);
-}
-
 .logo{
-    width: 60px;
-    height: 60px;
+    width: 290px;
+    height: 70px;
     background: url("../img/logo.png") center / cover;
     margin-left: var(--nav-margin);
     margin-right: 15px;
+    cursor: pointer;
 }
 
 /* Navigation button for small screens */
@@ -74,11 +71,11 @@ header{
 .brand-name{
     width: fit-content;
     width: -moz-fit-content;
-    display: inline;
     font-family: var(--title-1);
     color: var(--color-3);
     font-size: 25px;
     letter-spacing: 3px;
+    display: none;
 }
 
 #collapseContent ul{
@@ -90,9 +87,6 @@ header{
     color: var(--color-3);
     font-family: var(--desc-1);
     cursor: pointer;
-}
-.dropdown-menu{
-    background-color: var(--color-1);
 }
 
 ul .nav-item:last-child{
@@ -108,7 +102,7 @@ ul .nav-item:last-child{
 
 /* CTA Button *******************************************************/
 .cta-btn {
-    --color: var(--color-4);
+    --color: var(--color-3);
     color: var(--color);
     border: 2px solid var(--color);
     padding: 10px 20px;
@@ -220,13 +214,13 @@ ul .nav-item:last-child{
     flex-direction: column;
     align-items: center;
 }
-#industry-container h3 {
+#industry-container > h3 {
     font-size: 45px;
     text-align: center;
     display: block;
     font-family: var(--title-2);
 }
-#industry-container p {
+#industry-container > p {
     font-size: 20px;
     margin-bottom: 40px;
     text-align: center;
@@ -259,17 +253,14 @@ ul .nav-item:last-child{
 #industry .card_content {
     --color: var(--color-2);
     position: absolute;
-    top: 45px;
     left: 0;
     bottom: 0;
-    /* edit the width to fit card */
     width: 100%;
     padding: 20px;
     background: var(--color);
     border-top-left-radius: 20px;
-    /* edit here to change the height of the content box */
-    transform: translateY(190px);
-    transition: transform .25s;
+    transform: translateY(50px);
+    transition: all .5s;
 }
 #industry .card_content::before {
     content: '';
@@ -281,7 +272,7 @@ ul .nav-item:last-child{
     transform: rotate(-175deg);
     border-radius: 50%;
     box-shadow: inset 48px 48px var(--color);
-    z-index: -1;
+    z-index: 0;
 }
 
 #industry .card_title {
@@ -299,22 +290,26 @@ ul .nav-item:last-child{
 }
 
 #industry .card_description {
-    margin-top: 7px;
-    font-size: 14px;
+    margin: 0px;
     opacity: 0;
-    transition: opacity .5s;
+    margin-top: 30px;
+    display: block;
+    transition: all .25s;
 }
 
 #industry .card_description a {
-    font-size: 1.1em;
-    color: var(--color-4);
-    display: block;
+    font-size: 15px;
+    padding: 5px 10px;
+    font-weight: 500;
+    background-color: var(--color-3);
+    border-radius: 10px;
     text-align: right;
+    color: var(--color);
 }
 
 /* Hover */
 #industry .card:hover .card_content {
-    transform: translateY(0);
+    transform: translateY(0px);
 }
 
 #industry .card:hover .card_description {
@@ -356,7 +351,7 @@ ul .nav-item:last-child{
     width: 300px;
     height: 200px;
     background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-image: linear-gradient(45deg, hsla(58, 78%, 55%, 1) 8%, hsla(281, 100%, 52%, 1) 100%);
     border-radius: 8px;
     color: white;
     overflow: hidden;
@@ -444,7 +439,7 @@ ul .nav-item:last-child{
 }
 
 #case-study .card {
-    --gradient:  linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    --gradient:  linear-gradient(-45deg, var(--color-2) 0%, var(--color-3) 100% );
     --color: #e8e8e8;
     position: relative;
     display: flex;
@@ -649,14 +644,26 @@ footer .socials i{
 
 /************ MD Devices ************/
 @media (max-width: 992px) {
+    .logo{
+        width: 120px;
+        height: 50px;
+        background-position: left;
+    }
     .nav-item {
-        margin: auto 7px;
+        margin: auto 8px;
     }
 }
 
 /************ SM Devices ************/
 @media (max-width: 768px) {
     /* Navigation */
+    .logo{
+        height: 40px;
+        width: 95px;
+    }
+    .brand-name{
+        display: inline;
+    }
     .nav-item{
         width: fit-content;
         /* margin-left: 35px; */
@@ -700,7 +707,7 @@ footer .socials i{
         display: none;
     }
     :root{
-        --skew: -4deg;
+        --skew: -5deg;
     }
 
     /* banner */

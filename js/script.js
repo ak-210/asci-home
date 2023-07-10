@@ -1,12 +1,12 @@
 // Auto populate #case-study ////////////////////////////////////////////////////
 async function getJSON(path) {
-    const response = await fetch(path);
+    const response = await fetch(`./${path}`);
     const data = await response.json();
     return data
 };
 
 async function getHTML(path) {
-    const response = await fetch(path);
+    const response = await fetch(`./${path}`);
     const data = await response.text();
     return data
 };
@@ -16,8 +16,8 @@ function addProperty(name, value, text){
     return(txt);
 };
 
-var projects = await getJSON('json/case-study.json');
-var html = await getHTML('snippets/case-study.html');
+var projects = await getJSON('../json/case-study.json');
+var html = await getHTML('../snippets/case-study.html');
 var final_html = '';
 
 
