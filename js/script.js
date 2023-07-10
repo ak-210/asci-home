@@ -16,8 +16,8 @@ function addProperty(name, value, text){
     return(txt);
 };
 
-var projects = await getJSON('../json/case-study.json');
-var html = await getHTML('../snippets/case-study.html');
+var projects = await getJSON('json/case-study.json');
+var html = await getHTML('snippets/case-study.html');
 var final_html = '';
 
 
