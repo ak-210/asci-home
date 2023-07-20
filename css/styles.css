@@ -1,10 +1,12 @@
 :root {
     --nav-margin: 7vw;
+    --skew: skewY(-3deg);
+
     --color-1: #6527BE;
     --color-2: #febf12;
-    --color-3: #fc006e;
-    --color-4: #A7EDE7;
-    --skew: -3deg;
+    --primary-red: #fc006e;
+    --bg-color: #A7EDE7;
+
     --title-1:'DM Serif Display', serif;
     --title-2: 'EB Garamond', serif;
     --title-3: 'Slabo 27px', serif;
@@ -68,15 +70,15 @@ html {
     box-shadow: none;
 }
 
-.brand-name{
+/* .brand-name{
     width: fit-content;
     width: -moz-fit-content;
     font-family: var(--title-1);
-    color: var(--color-3);
+    color: var(--primary-red);
     font-size: 25px;
     letter-spacing: 3px;
     display: none;
-}
+} */
 
 #collapseContent ul{
     justify-content: end;
@@ -84,7 +86,7 @@ html {
 
 .nav-item, .dropdown-item{
     margin: auto 10px;
-    color: var(--color-3);
+    color: var(--color-1);
     font-family: var(--desc-1);
     cursor: pointer;
 }
@@ -102,17 +104,23 @@ ul .nav-item:last-child{
 
 /* CTA Button *******************************************************/
 .cta-btn {
-    --color: var(--color-3);
-    color: var(--color);
+    --color: #6527BE;
+    background-color: var(--color);
     border: 2px solid var(--color);
+    color: #fff;
     padding: 10px 20px;
     border-radius: 20px;
     font-weight: 700;
     position: relative;
     overflow: hidden;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease;
 }
-.cta-btn::before {
+.cta-btn:hover {
+    /* box-shadow: 0px 0px 10px 5px var(--color) inset; */
+    /* color: var(--color); */
+    background: transparent;
+}
+/* .cta-btn::before {
     content: '';
     position: absolute;
     width: 110%;
@@ -125,12 +133,9 @@ ul .nav-item:last-child{
     transition: all .5s ease-in-out;
     z-index: -1;
 }
-.cta-btn:hover {
-    color: #000;
-}
 .cta-btn:hover::before {
     transform: rotate(0deg);
-}
+} */
 /* CTA Button End */
 
 /* Banner **********************************************************/
@@ -143,6 +148,8 @@ ul .nav-item:last-child{
     background: url("../img/banner.jpg") no-repeat fixed center / cover;
     filter: opacity(0.8);
     color: #fff;
+    position: relative;
+    overflow: hidden;
 }
 
 #banner-title{
@@ -174,12 +181,13 @@ ul .nav-item:last-child{
     content: '';
     width: 100vw;
     height: 100%;
-    background-color: var(--color-4);
+    background-color: var(--bg-color);
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-    transform: skewY(var(--skew));
+    /* transform: skewY(var(--skew)); */
+    transform: var(--skew);
 }
 
 #story-title{
@@ -189,7 +197,7 @@ ul .nav-item:last-child{
     font-family: var(--title-2);
     position: relative;
 }
-#story-title::before{
+/* #story-title::before{
     content: '';
     position: absolute;
     width: 200%;
@@ -198,13 +206,14 @@ ul .nav-item:last-child{
     background-color: #000;
     right: 0;
     bottom: 0;
-}
+} */
 
 #story-txt {
     width: 70%;
     text-align: right;
     font-size: 18px;
     font-family: var(--desc-1);
+    text-wrap: balance;
 }
 /* Story End */
 
@@ -228,19 +237,28 @@ ul .nav-item:last-child{
 }
 
 #industry {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    row-gap: 10px;
-    column-gap: 20px;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    gap: 3rem;
+    /* width: 100%; */
+}
+@media(max-width:1160px){
+    #industry{
+        grid-template-columns: repeat(2, 250px);
+    }
+}
+@media(max-width:600px){
+    #industry{
+        grid-template-columns: 250px;
+    }
 }
 
 #industry .card {
     position: relative;
     width: 250px;
-    height: 300px;
+    max-width: 300px;
+    /* height: 300px; */
+    aspect-ratio: 5/6;
     overflow: hidden;
     border-radius: 20px;
 }
@@ -251,7 +269,7 @@ ul .nav-item:last-child{
 }
 
 #industry .card_content {
-    --color: var(--color-2);
+    --color: #e6cc77;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -301,7 +319,7 @@ ul .nav-item:last-child{
     font-size: 15px;
     padding: 5px 10px;
     font-weight: 500;
-    background-color: var(--color-3);
+    background-color: var(--primary-red);
     border-radius: 10px;
     text-align: right;
     color: var(--color);
@@ -319,27 +337,24 @@ ul .nav-item:last-child{
 /* Industry End */
 
 /* Services ********************************************************/
-#services {
+#services-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    row-gap: 15px;
-    width: 100%;
 }
-#services::before {
+#services-container::before {
     content: '';
     width: 100vw;
     height: 120%;
-    background-color: var(--color-4);
+    background-color: var(--bg-color);
     position: absolute;
     top: -10%;
     left: 0;
     z-index: -1;
-    transform: skewY(var(--skew));
+    transform: var(--skew);
 }
 
-#services h3 {
+#services-container h3 {
     font-size: 45px;
     text-align: center;
     width: 100%;
@@ -347,11 +362,59 @@ ul .nav-item:last-child{
     font-family: var(--title-2);
 }
 
+#services {
+    --column: 5;
+    display: grid;
+    grid-template-columns: repeat(5, 300px);
+    justify-items: center;
+    gap: 15px;
+    margin: auto;
+    width: fit-content;
+    width: -moz-fit-content;
+}
+@media (min-width:960px) and (max-width:1600px) {
+    #services{
+        grid-template-columns: repeat(6, 150px);
+        /* gap: 5px; */
+        grid-template-areas: 
+        'a a b b c c'
+        '. d d e e .';
+    }
+    #services .card:nth-child(1) {
+        grid-area: a;
+    }
+    #services .card:nth-child(2) {
+        grid-area: b;
+    }
+    #services .card:nth-child(3) {
+        grid-area: c;
+    }
+    #services .card:nth-child(4) {
+        grid-area: d;
+    }
+    #services .card:nth-child(5) {
+        grid-area: e;
+    }
+}
+@media (min-width:645px) and (max-width:960px) {
+    #services{
+        grid-template-columns: repeat(2, 300px);
+    }
+    #services .card:last-child {
+        grid-column: span 2;
+    }
+}
+@media (max-width:645px) {
+    #services{
+        grid-template-columns: 300px;
+    }
+}
+
 #services .card {
     width: 300px;
     height: 200px;
     background-color: #4158D0;
-    background-image: linear-gradient(45deg, hsla(58, 78%, 55%, 1) 8%, hsla(281, 100%, 52%, 1) 100%);
+    background-image: linear-gradient(45deg, hsla(58, 78%, 55%, 1) 0%, rgb(171, 31, 237) 75%);
     border-radius: 8px;
     color: white;
     overflow: hidden;
@@ -431,15 +494,14 @@ ul .nav-item:last-child{
 #case-study {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    row-gap: 15px;
-    column-gap: 20px;
+    gap: 25px;
     width: 100%;
 }
 
 #case-study .card {
-    --gradient:  linear-gradient(-45deg, var(--color-2) 0%, var(--color-3) 100% );
+    --gradient:  linear-gradient(-45deg, var(--color-2) 0%, var(--primary-red) 100% );
     --color: #e8e8e8;
     position: relative;
     display: flex;
@@ -534,12 +596,12 @@ footer::before {
     content: '';
     width: 100vw;
     height: 110%;
-    background: linear-gradient(0deg, var(--color-1) 0%, var(--color-4) 70%);
+    background: linear-gradient(0deg, var(--color-1) 0%, var(--bg-color) 70%);
     position: absolute;
     top: calc(0.053*100vw);
     right: 0;
     z-index: -1;
-    transform: skewY(var(--skew));
+    transform: var(--skew);
 }
 
 footer h3{
@@ -605,7 +667,7 @@ footer .socials i{
     background: transparent;
     padding: 5px 15px;
     color: #fff;
-    border: 2px solid var(--color-3);
+    border: 2px solid var(--primary-red);
     border-radius: 8px;
     z-index: 1;
     position: relative;
@@ -619,7 +681,7 @@ footer .socials i{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--color-3);
+    background-color: var(--primary-red);
     transform: translateX(-100%);
     z-index: -1;
     transition: all .3s ease-in-out;
@@ -707,7 +769,7 @@ footer .socials i{
         display: none;
     }
     :root{
-        --skew: -5deg;
+        --skew: skewY(-5deg);
     }
 
     /* banner */
