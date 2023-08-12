@@ -1,0 +1,25 @@
+/* Banner Style **************************************************************/
+#banner{
+    height: 600px;
+}
+
+#banner::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #000000a6;
+    z-index: 0;
+}
+
+#banner-title {
+    position: relative;
+}
+
+#banner-title::before{ /* for underline */
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 3px;
+    background-color: white;
+}
+/* Banner Style End */

@@ -7,173 +7,102 @@
     <title>
         ASCI
     </title>
-    <link rel="icon" type="image/x-icon" href="/img/icon.ico">
+    <link rel="icon" type="image/x-icon" href="img/icon.ico">
     <!-- Bootstrap -->
-    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' href='bootstrap/bootstrap.min.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
     
-    <link rel='stylesheet' href='css/styles.css'>
+    <link rel='stylesheet' href='css/styles-all.css'>
+    <link rel='stylesheet' href='css/styles-index.css'>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md">
-            <div class="container-fluid">
-                <div class="logo"></div>
-                <!-- <div class="brand-name">ASCI</div> -->
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContent" aria-controls="collapseContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="collapseContent">
-                    <ul id="nav-list" class="nav navbar-nav navbar-right ms-auto">
-                        <li class="nav-item">About Us</li>
-                        <li class="nav-item dropdown"><!-- Solutions Dropdown -->
-                            <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Solutions</span>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"> Pre-processing </a></li>
-                                <li><a class="dropdown-item" href="#"> HSI Data Integration </a></li>
-                                <li><a class="dropdown-item" href="#"> Analytic Solutions </a></li>
-                            </ul>
-                        </li><!-- Solutions Dropdown End -->
-
-                        <li class="nav-item dropdown"> <!-- Resources Dropdown -->
-                            <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</span>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"> Blogs </a></li>
-                                <li><a class="dropdown-item" href="#"> Case Studies </a></li>
-                            </ul>
-                        </li> <!-- Resources Dropdown End -->
-                        <li class="nav-item">Client Login</li>
-                        <li class="nav-item">Contact Us</li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header> <!-- Navigation End -->
+    <header></header> <!-- Navigation End -->
 
     <!-- Banner Start -->
     <div id="banner" class="container-fluid">
         <h1 id="banner-title">Unlocking EO Data Potential</h1>
         <p id="banner-desc">Leverage EO data to manage your assets and gain a competitive advantage</p>
-        <button class="cta-btn">Contact Us</button>
+        <button class="btn-main"> <span class="btn-content">Contact us</span> </button>
     </div> <!-- Banner End -->
 
     <div class="spacer"></div>
 
     <!-- Story Start -->
-    <div id="story" class="container-fluid scroll-hide">
+    <div id="story" class="container-fluid scroll-hide skew-bg">
         <h2 id="story-title">What We Do?</h2>
-        <p id="story-txt">There are Petabytes of Earth-Obseravation data out there being recorded world over through multiple sources. There are quantum leaps being made in computational power and deep tech algorithms. We are a group of data engineers and data scientists who combine them both to radically augment your value chain and give you that competitive edge.</p>
+
+        <ul class="story-list">
+            <li class="list-item"><span>We are a geospatial analytics company</span> <img src="img/story-1.png" alt=""></li>
+            <li class="list-item"><span>Our objective is to address looming necessities using earth observation </span><img src="img/story-2.png" alt=""></li>
+            <li class="list-item"><span>We specialize in integrating academic research into real-world application </span><img src="img/story-3.png" alt=""></li>
+            <li class="list-item"><span>Your expertise and our tech can make a difference </span><img src="img/story-4.png" alt=""></li>
+        </ul>
+
+        <div id="img-container">
+            <img class="bg-img" src="img/satelite.png" alt="">
+            <img class="bg-img" src="img/satelite-2.png" alt="">
+        </div>
     </div> <!-- Story End -->
 
     <div class="spacer"></div>
 
     <!-- Industry Start -->
     <div id="industry-container" class="container-fluid scroll-hide">
-        <h3>Industries We Operate In</h3>
+        <h3>Industries</h3>
         <p>Find out more about our Work</p>
         <div id="industry">
-            <article class="card">
-                <div class="temporary_text">
-                    <img src='img/agri.jpg'>
-                </div>
-                
+            <div class="card">
+                <img class="card_img" src="img/agri.jpg" alt="">
                 <div class="card_content">
-                    <span class="card_title">Agriculture</span>
-                    
-                    <p class="card_description"><a href="#">Find out More</a></p>
-                    
-                </div> <!-- Card Content -->
-            </article> <!-- Card End -->
+                    <h4 class="card_title">Agriculture</h4>
+                    <a href="" class="card_link">Find out more</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card_img" src="img/mine.png" alt="">
+                <div class="card_content">
+                    <h4 class="card_title">Mining</h4>
+                    <a href="" class="card_link">Find out more</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card_img" src="img/urban.png" alt="">
+                <div class="card_content">
+                    <h4 class="card_title">Urban Planning</h4>
+                    <a href="" class="card_link">Find out more</a>
+                </div>
+            </div>
             
-            <article class="card">
-                <div class="temporary_text">
-                    <img src='img/agro.png'>
-                </div>
-
-                <div class="card_content">
-                    <span class="card_title">Agroforestry</span>
-
-                    <p class="card_description"><a href="#">Find out More</a></p>
-                    
-                </div> <!-- Card Content -->
-            </article> <!-- Card End -->
-            
-            <article class="card">
-                <div class="temporary_text">
-                    <img src='img/mine.png'>
-                </div>
-
-                <div class="card_content">
-                    <span class="card_title">Mining</span>
-
-                    <p class="card_description"><a href="#">Find out More</a></p>
-                    
-                </div> <!-- Card Content -->
-            </article> <!-- Card End -->
-            
-            <article class="card">
-                <div class="temporary_text">
-                    <img src='img/urban.png'>
-                </div>
-                
-                <div class="card_content">
-                    <span class="card_title">Urban Planning</span>
-
-                    <p class="card_description"><a href="#">Find out More</a></p>
-                    
-                </div> <!-- Card Content -->
-            </article> <!-- Card End -->
         </div>
     </div> <!-- Industry end -->
 
     <div class="spacer"></div>
 
     <!-- Services -->
-    <div id="services-container" class="scroll-hide">
-        <h3>Services Provided</h3>
+    <div id="services-container" class="scroll-hide skew-bg">
+        <h3>Geospatial Services</h3>
         <div id="services">
             <div class="card">
                 <div class="card-content">
-                <p class="card-title">Pre-processing</p>
-                <p class="card-para">Create analysis ready data at the click of a button</p>
+                <p class="card-title">EO Edge Computing</p>
+                <p class="card-para">Leverage sensor agnostic analysis ready data</p>
                 </div>
             </div> <!-- Card End -->
             
             <div class="card">
                 <div class="card-content">
-                <p class="card-title">Visualize</p>
-                <p class="card-para">Visually explore your asset using geospatial intelligence</p>
+                <p class="card-title">EO Digital Twin</p>
+                <p class="card-para">Digitize & Streamline information and processes</p>
                 </div>
             </div> <!-- Card End -->
             
             <div class="card">
                 <div class="card-content">
-                <p class="card-title">Analyze</p>
-                <p class="card-para">Define and compare important key metrics that measure the health of your business</p>
-                </div>
-            </div> <!-- Card End -->
-            
-            <div class="card">
-                <div class="card-content">
-                <p class="card-title">Insights</p>
-                <p class="card-para">Uncover hidden truths about your business </p>
-                </div>
-            </div> <!-- Card End -->
-            
-            <div class="card">
-                <div class="card-content">
-                    <p class="card-title">Applications</p>
-                    <p class="card-para">Play around and design tailored made applications that suit your complex needs</p>
+                <p class="card-title">HSI Suite</p>
+                <p class="card-para">Multi-dimensional spectral analytics</p>
                 </div>
             </div> <!-- Card End -->
         </div>
@@ -192,31 +121,14 @@
     <div class="spacer"></div>
 
     <!-- Contact Page -->
-    <footer class="scroll-hide">
-        <h3>Let's co-inovate</h3>
-        <div id="contact">
-            <div class="socials">
-                <a href="https://wa.me/+917358498262" target="_blank"><i class="bi bi-whatsapp"></i><span> +91 73584 98262</span></a>
-                <a href="mailto:hello@asci.co.in"><i class="bi bi-envelope-at"></i><span> hello@asci.co.in</span></a>
-                <a href="https://www.linkedin.com/company/applied-science-innovations/" target="_blank"><i class="bi bi-linkedin"></i><span> LinkedIn</span></a>
-            </div>
-
-            <!-- <div id="contact-form">
-                <input type="email" name="Email ID" id="mail-id" placeholder="Email ID">
-                <input type="text" name="Subject" id="mail-sub" placeholder="Subject">
-                <textarea name="Desc" id="mail-desc" rows="5" placeholder="How may we help you?"></textarea>
-
-                <button type="button" id="mail-btn"> Send Mail <i class="bi bi-arrow-right-circle"></i></button>
-            </div> -->
-        </div>
-    </footer>
+    <footer class="scroll-hide"></footer>
     <!-- Contact Page End -->
     
-    <!-- jQuery (Bootstrap JS plugins depend on it) -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src='js/bootstrap.bundle.min.js'></script>
-    <script src='js/ajax-utils.js'></script>
+    <script src='bootstrap/bootstrap.bundle.min.js'></script>
+    <script src='bootstrap/ajax-utils.js'></script>
+    <script src='js/script-info.js'></script>
     <script src='js/script-scroll.js'></script>
-    <script type="module" src='js/script.js'></script>
+    <script type="module" src='js/script-case-study.js'></script>
 </body>
 </html>

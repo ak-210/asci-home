@@ -1,0 +1,328 @@
+body {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 10px;
+    margin: 1rem 1rem 0 0;
+}
+
+button {
+    outline: none;
+    text-decoration: none;
+    border: 0;
+    background: transparent;
+}
+
+label {
+    cursor: inherit;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+i {
+    width: 100%;
+    position: relative;
+}
+i::before {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Loading Animation *****************************************************************/
+#loader{
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 1000;
+    backdrop-filter: blur(0.1rem);
+    display: none;
+}
+#loader.show{
+    display: flex !important;
+}
+
+.loading {
+    --speed-of-animation: 0.9s;
+    --gap: 6px;
+    --first-color: #23aaa4;
+    --second-color: #3c80ff;
+    --third-color: #fc006e;
+    --fourth-color: #febf12;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    gap: 6px;
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px gray;
+}
+
+.loading span {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: var(--first-color);
+    animation: scale var(--speed-of-animation) ease-in-out infinite;
+}
+
+.loading span:nth-child(2) {
+    background: var(--second-color);
+    animation-delay: -0.8s;
+}
+
+.loading span:nth-child(3) {
+    background: var(--third-color);
+    animation-delay: -0.7s;
+}
+
+.loading span:nth-child(4) {
+    background: var(--fourth-color);
+    animation-delay: -0.6s;
+}
+
+@keyframes scale {
+    0%, 40%, 100% {
+        height: 10px;
+    }
+
+    20% {
+        height: 70px;
+    }
+}
+/* Loading animation End */
+
+/* Navigation styles *********************************************************/
+#nav {
+    position: fixed;
+    inset: 0 80% 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 1rem 0 1rem 1rem;
+    /* overflow-x: scroll; */
+}
+
+/* Co-ordinates */
+#coords {
+    display: grid;
+    grid-template-columns: 45% 45% 10%;
+}
+
+#lat, #long {
+    width: 100%;
+}
+
+#coords button {
+    border: 1px solid black;
+}
+#coords button:hover {
+    background-color: rgb(152, 148, 177);
+}
+
+/* Date */
+#dates{
+    appearance: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+#dates:focus {
+    outline: none;
+    border-bottom-color: gray;
+}
+
+/* Buttons */
+.btn-main {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 1rem;
+    border-radius: 1.5rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    width: auto;
+    margin: 0 auto;
+}
+
+.btn-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient( 82.3deg, #965de9 10.8%, #6358ee 94.3% );
+    transition: all 0.475s;
+}
+
+.btn-main:hover::before {
+    transform: scaleX(1);
+}
+
+.btn-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fildsets */
+fieldset {
+    --transition: all .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+fieldset > legend {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+}
+
+fieldset > div {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: .2rem .5rem;
+    margin-left: 1rem;
+    border-radius: 3rem;
+    transition: var(--transition);
+}
+
+fieldset > div:hover {
+    background-color: #6258ee27;
+}
+
+fieldset > div:has(input:checked) {
+    background-color: #6358ee;
+    color: #fff;
+}
+
+fieldset > div > input {
+    appearance: none;
+    -moz-appearance: none; /* Firefox */
+    width: 1rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid #6358ee;
+    transition: var(--transition);
+}
+
+fieldset > div > input:checked {
+    border-color: white;
+    background-color: white;
+    outline: 2.5px solid #6358ee;
+    outline-offset: -4px;
+}
+
+@supports not (selector(:has(input:checked))){
+    fieldset > div > input:checked {
+        border: 2px solid #6358ee;
+        background-color: #6358ee;
+        outline: 2px solid white;
+        outline-offset: -3.5px;
+    }
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+}
+
+/* Image Toggle switch */
+.image-toggler {
+    --height: 1.5rem;
+    --width: 2.8rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: var(--width);
+    height: var(--height);
+    border-radius: calc(var(--height) / 2);
+    background: #bababa;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    display: none;
+}
+
+.image-toggler::before {
+    content: "";
+    width: var(--width);
+    height: var(--height);
+    border-radius: calc(var(--height) / 2);
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: black;
+    z-index: 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.image-toggler::after {
+    content: '';
+    height: calc(var(--height) - 5px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    inset: 0 auto 0 0;
+    transform: translate(3px, 2.5px);
+    z-index: 1;
+    transition: all 0.4s;
+}
+
+.image-toggler:checked::before {
+    transform: translateX(-100%);
+}
+
+.image-toggler:checked::after {
+    transform: translate(calc(var(--width) - var(--height) + 2.5px), 2.5px);
+    background-color: white;
+}
+
+/* Map Styles ***************************************************************/
+#map {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.drawPane {
+    z-index: 402;
+}

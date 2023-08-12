@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>
+        App | ASCI
+    </title>
+    <link rel="icon" type="image/x-icon" href="img/icon.ico">
+
+    <link rel='stylesheet' href='bootstrap/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel='stylesheet' href='css/styles-app.css'>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Leaflet Draw -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+    <!-- Leaflet geocoder for search -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <!-- For current location -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <!-- For adding charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="side">
+        <aside id="nav">
+            <form id="coords">
+                <input type="text" id="lat" placeholder="Latitude">
+                <input type="text" id="long" placeholder="Longitude">
+                <button><i class="bi bi-caret-right-fill"></i></button>
+            </form>
+
+            <input type="date" id="dates">
+
+            <div class="block">
+                <button id="btn-visual" class="btn-main"> <span class="btn-content">Get Satellite Image</span> </button>
+                <input type="checkbox" id="visual-checkbox" class="image-toggler">
+            </div>
+            
+            <fieldset id="kpi">
+                <legend>Select KPI</legend>
+                <div> <input type="radio" name="kpi" id="NDVI"> <label for="NDVI">NDVI</label> </div>
+                <div> <input type="radio" name="kpi" id="Evapo"> <label for="Evapo">Evapo</label> </div>
+            </fieldset>
+            
+            <div class="block">
+                <button id="btn-kpi" class="btn-main"> <span class="btn-content">Get KPI Image</span> </button>
+                <input type="checkbox" id="kpi-checkbox" class="image-toggler">
+            </div>
+            
+            <fieldset id="days">
+                <!-- Updated using JS -->
+            </fieldset>
+
+            <button id="btn-data" class="btn-main"> <span class="btn-content">Get Point Data</span> </button>
+        </aside>
+    </div>
+
+    <div class="main">
+        <div id="map"></div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src='bootstrap/bootstrap.min.js'></script>
+    <script src='bootstrap/ajax-utils.js'></script>
+    <script src='js/script-app.js'></script>
+</body>
+</html>
