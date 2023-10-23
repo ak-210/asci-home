@@ -228,8 +228,12 @@ html {
     position: absolute;
     inset: 0 0 0 0;
     z-index: 0;
-    background: transparent;
-    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.272);
+    backdrop-filter: blur(3px);
+}
+
+#banner > * {
+    z-index: 1;
 }
 
 #banner-title{
